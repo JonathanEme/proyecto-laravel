@@ -49,7 +49,7 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Route::get('/configuracion', 'App\Http\Controllers\UserController@config')->name('config');
 Route::POST('/user/update', 'App\Http\Controllers\UserController@update')->name('user.update');
 Route::get('/user/avatar/{filename}', 'App\Http\Controllers\UserController@getImage')->name('user.avatar');
-Route::get('/subir-imagen', 'App\Http\Controllers\ImageController@create')->name('image.create');
-Route::POST('/image/save', 'App\Http\Controllers\ImageController@save')->name('image.save');
-Route::get('/image/file/{filename}', 'App\Http\Controllers\ImageController@getImage')->name('image.file');
 
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
